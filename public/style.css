@@ -1,0 +1,31 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+}
+img{
+  height: 200px;
+}
+
+.message span{
+  display:block;
+}
+
+
+.messages{
+  margin-left:15px;
+}
+
+
+.flag{
+  background-color:yellow;
+}
+
+.heart{
+  color:red;
+}
+
+
+
+/* .hidden{
+  visibility: hidden;
+} */

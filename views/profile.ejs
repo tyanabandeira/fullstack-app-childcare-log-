@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <title>Baby Daily Log</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span>Baby Daily Log</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-7">
+          <h3>Messages</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li <%= messages[i].priority ? 'class = flag' : 'class = noFlag' %>>
+              <span><%= messages[i].name %></span>
+              <span>I woke up at: <%= messages[i].msg %></span>
+              <span>I Slept: <%= messages[i].sleep %></span>
+              <span>I was last fed: <%= messages[i].feed %></span>
+              <span>Notes/ Instructions for the day: <%= messages[i].instructions %></span>
+              <span><i class="fa fa-trash-o" aria-hidden="true"></i></span> 
+              <!-- <span><i class="fa fa-comment" aria-hidden="true"></i></span>  -->
+              <span><i class="fa fa-flag" aria-hidden="true"></i></span> 
+              <span <%= messages[i].heart ? 'class = heart' : 'class = noHeart' %>><i class="fa fa-heart" aria-hidden="true"></i></span> 
+            </li>
+          <% } %>
+         
+          </ul>
+
+
+
+          <h2>Log</h2>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="Wake up time" name="msg">
+            <input type="text" placeholder="The baby slept...." name="sleep">
+            <input type="text" placeholder="Last feed..." name="feed">
+            <input type="text" placeholder="Insructions for the day..." 
+            name="instructions">
+            
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+</div>
+
+
+
+
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 
+              name
+              I woke up at:
+              I slept:
+              I was last fed at:
+              Meals/Feeds
+              Diaper: Wet/BM
+              Nap start and end
+              activites 
+              items need:
+              notes:
+             -->
