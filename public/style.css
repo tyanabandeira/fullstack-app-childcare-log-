@@ -1,9 +1,21 @@
-body{
-  padding-top:80px;
-  word-wrap:break-word;
-}
+/* body{
+  /* padding-top:80px;
+  word-wrap:break-word; */
 img{
   height: 200px;
+}
+
+.body{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.2), rgba(4, 9, 30, 0.2)), url(./img/hands.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logout{
+  text-decoration: none;
+  color:black;
 }
 
 .message span{
@@ -24,8 +36,57 @@ img{
   color:red;
 }
 
-
+.text-center h1{
+  font-size: 5rem;
+}
 
 /* .hidden{
   visibility: hidden;
 } */
+
+.fa-star{
+  color:yellow;
+}
+
+.header{
+  color:white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 4rem;
+  /* margin-left:2%; */
+}
+
+input{
+  display:block;
+}
+
+.form{
+  border: 2px solid black;
+  padding: 2%;
+  border-radius: 3px;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: rgba(245, 245, 245);
+  border: 1px solid rgba(227,227,227);
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 5%);
+  width:15%;
+}
+
+
+
+.col-sm-7{
+  margin: auto;
+  justify-content: center;
+  display: flex;
+  background-color: rgba(245, 245, 245, 0.7);
+  border: 1px solid rgba(227,227,227);
+  border-radius: 4px;
+  width:30%;
+}
+
+
+.messages{
+  display: block;
+}
